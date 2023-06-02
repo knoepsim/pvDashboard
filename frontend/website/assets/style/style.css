@@ -1,0 +1,302 @@
+/* 
+https://uiverse.io/
+
+
+https://uiverse.io/alexmaracinaru/pink-tiger-66
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+:root {
+  --main-bg-color: white;
+  --primary: black;
+  --secondary: #696969;
+  --head: #5727b0;
+  --outline: #9c27b0;
+  --table: #1460aa;
+  --chart1: #5727b0;
+  --chart2: #1b7742;
+}
+
+body {
+  color: var(--primary);
+  background-color: var(--main-bg-color);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: 1.5s;
+}
+
+/**     navbar     **/
+nav {
+  display: flex;
+  border-bottom: black solid medium;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+nav * {
+  padding: 0;
+  width: fit-content;
+}
+nav h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding-left: 20px;
+}
+nav h1 em {
+  font-size: small;
+  font-weight: lighter;
+}
+
+/**   HELL DUNKEL SCHALTER    **/
+#lightToggler {
+  font-size: 25px;
+  border: black solid thin;
+  padding: 10px;
+  width: min-content;
+  height: min-content;
+  border-radius: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#lightToggler:hover {
+  cursor: pointer;
+}
+
+/**     DASHBOARD     **/
+#dashboard {
+  display: block;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  width: fit-content;
+  color: var(--head);
+  font-weight: bold;
+}
+.container {
+  display: block;
+  float: left;
+  margin: 10px;
+  padding: 20px;
+  border: var(--outline) solid thin;
+}
+
+.title,
+.subtitle {
+  padding-left: 20px;
+}
+
+.table-container {
+  float: left;
+}
+
+h3 {
+  text-align: center;
+}
+
+table {
+  text-align: right;
+  margin: 10px;
+  /* border: solid var(--table) thin; */
+}
+
+table td,
+th {
+  min-width: 7vw;
+  padding: 8px;
+}
+
+table th {
+  border: solid var(--table) thin;
+}
+
+table td:last-child,
+th:last-child {
+  text-align: left;
+}
+
+#updateTime {
+  color: var(--secondary);
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  float: right;
+  padding-right: 20px;
+}
+
+#clock {
+  margin: 15px;
+  margin-bottom: 0;
+}
+#date {
+  float: right;
+  margin: 10px;
+  margin-right: 15px;
+  margin-top: 0;
+}
+
+.reload-btn {
+  float: right;
+  padding: 10px;
+  margin: 20px;
+  margin-top: 0px;
+  border: var(--head) solid thin;
+  color: var(--primary);
+  background-color: transparent;
+  border-radius: 15px;
+  transition: 0.6s;
+}
+.reload-btn:hover {
+  background-color: var(--secondary);
+  cursor: pointer;
+  transition: 0.2s;
+  border-color: var(--head);
+}
+
+.reload-btn:disabled {
+  cursor: wait;
+  transition: 0.2s;
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+.reload-btn svg {
+  height: 1rem;
+  margin-right: 20px;
+  margin-left: 20px;
+  animation: spin infinite linear 5000ms;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+#fullcover {
+  z-index: 4;
+  background-color: var(--main-bg-color);
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.fullcoverPoints {
+  padding-top: 15px;
+  font-size: 20px;
+}
+
+.fullcoverPoints svg {
+  fill: var(--primary);
+  width: 20px;
+  animation: spin infinite linear 5000ms;
+}
+
+.fullcoverTitle {
+  font-size: 20px;
+  padding-top: 20px;
+}
+
+.code-loader {
+  color: var(--head);
+  font-family: Consolas, Menlo, Monaco, monospace;
+  font-weight: bold;
+  font-size: 100px;
+  opacity: 0.8;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+}
+
+.code-loader span {
+  display: inline-block;
+  animation: pulse_414 0.4s alternate infinite ease-in-out;
+}
+
+.code-loader span:nth-child(odd) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse_414 {
+  to {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+.chart {
+  min-height: 50vh;
+}
+
+.antiselect {
+  user-select: none;
+}
+
+/**   BATTERIE     **/
+.batteryContainer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px;
+  margin-top: 0px;
+}
+
+.batteryOuter {
+  border-radius: 3px;
+  border: 1px solid var(--secondary);
+  padding: 1px;
+  width: 150px;
+  height: 54px;
+}
+
+.batteryBump {
+  border-radius: 2px;
+  background-color: var(--secondary);
+  margin: 2px;
+  width: 6px;
+  height: 18px;
+}
+
+#batteryLevel {
+  border-radius: 2px;
+  background-color: black;
+  width: 0px;
+  height: 54px;
+}
+
+#batteryPercent {
+  padding: 20px;
+  font-size: larger;
+  color: var(--primary);
+}
+
+.chartFrame {
+  color: red;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.userInput {
+  padding-left: 20px;
+}
