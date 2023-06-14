@@ -21,7 +21,7 @@ checkDB().then((dbStatus) => {
     } else if (dbStatus === 404) {
       $("#cover1").html("❌");
     }
-    if ($("#batteryPercent").html != "⌛ %") {
+    if ($("#batteryPercent").html() != "⌛ %") {
       $("#cover2").html("✅");
     }
     if (chart11 !== undefined) {
